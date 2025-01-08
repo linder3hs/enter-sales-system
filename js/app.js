@@ -3,6 +3,7 @@ const productList = document.getElementById("productList");
 
 // array de productos
 const products = [];
+const customers = [];
 
 productForm.addEventListener("submit", (e) => {
   // Evitar que el navegador recargue la página
@@ -47,6 +48,9 @@ clientForm.addEventListener("submit", (e) => {
 
   const clientName = document.getElementById("clientName").value;
   const clientEmail = document.getElementById("clientEmail").value;
+
+  const newCustomer = new Customer(clientName, clientEmail);
+  customers.push(newCustomer);
 
   const clientRow = document.createElement("tr");
   clientRow.innerHTML = `
